@@ -1,0 +1,45 @@
+
+    {% load static %}
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="{% url "shop:home" %}" class="logo">
+                            <img src="{% static "logo.png"%}">
+                            rch$HOP
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="{% url "shop:home" %}">Home</a></li>
+                            <li class="scroll-to-section"><a href="{% url "shop:product_list" %}">Shop</a></li>
+                            <li class="scroll-to-section"><a href="{% url "shop:about" %}">About</a></li>
+                            <li class="scroll-to-section"><a href="{% url "shop:contact" %}">Contact</a></li>
+                            <li><a href="#"><span class="icon icon-person"></span></a></li>
+                            <li>
+                                <a href="{% url "cart:cart_detail" %}" class="site-cart">
+                                    <span class="icon icon-shopping_cart"></span>
+                                    <span class="count">
+                                    {% with total_items=cart|length %}
+                                        {% if cart|length > 0 %}
+                                            {{ total_items|pluralize }}
+                                        {% else %}
+                                            0
+                                        {% endif %}
+                                    {% endwith %}
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
