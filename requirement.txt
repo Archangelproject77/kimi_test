@@ -28,5 +28,4 @@ python-decouple
 python-dotenv
 Markdown
 whitenoise
-Pillow
 six

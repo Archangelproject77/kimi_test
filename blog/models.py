@@ -5,7 +5,6 @@ from django.db.models.signals import pre_save,post_save
 from .utils import get_read_time
 from django.urls import reverse
 from taggit.managers import TaggableManager
-from PIL import Image
 from django.dispatch import receiver
 
 
